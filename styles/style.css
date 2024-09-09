@@ -380,15 +380,117 @@ nav ul li a {
 }
 
 /* Right side of Skills */
-.skills-list {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  margin-top: 1.5rem;
+/* Skills Section */
+#skills {
+  padding: var(--sectionPadding);
+  background: var(--secondaryBackgroundColor);
 }
 
-.skills-right ul {
-  line-height: 2rem;
-  padding: 0 1rem;
+/* Grid layout for skills section */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 3rem;
+}
+
+/* Styling each skill box */
+.skill-box {
+  background: var(--primaryBackgroundColor);
+  border-radius: var(--itemBorderRadius);
+  padding: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-box:hover {
+  transform: translateY(-10px);
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 16px;
+}
+
+.skill-box h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--primaryTextColor);
+  display: flex;
+  align-items: center;
+}
+
+.skill-box h4::before {
+  content: "✔";
+  margin-right: 0.5rem;
+  color: var(--primaryIconColor);
+}
+
+/* Skill progress bar */
+.skill-progress {
+  background: var(--borderColor);
+  height: 10px;
+  border-radius: 5px;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.skill-progress .progress-fill {
+  height: 100%;
+  background: var(--primaryIconColor);
+  width: 80%; /* Adjust based on skill level */
+  position: relative;
+}
+
+.skill-progress .progress-fill::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 8px;
+  height: 100%;
+  background: var(--primaryIconColorHover);
+}
+
+.skill-box p {
+  color: var(--secondaryTextColor);
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+/* Flex layout for skills list */
+.skills-list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.skills-list ul {
+  list-style-type: none;
+  padding: 0;
+  width: 45%;
+}
+
+.skills-list li {
+  margin-bottom: 10px;
+  background: #e3f2fd;
+  padding: 10px;
+  border-radius: 8px;
+  position: relative;
+  transition: background-color 0.3s ease;
+}
+
+.skills-list li:hover {
+  background: #bbdefb;
+}
+
+.skills-list li::before {
+  content: "•";
+  color: var(--primaryIconColor);
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.skills-list li strong {
+  color: #333;
+  font-weight: 500;
 }
 
 /* Contact Section */
